@@ -18,9 +18,8 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            sudo su
             cd /var/www/sanber-api/
-            git pull origin master
+            sudo git pull origin master
             composer run-script startup-project
             php artisan l5-swagger:generate
             php artisan key:generate
@@ -36,8 +35,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            sudo su
             cd /var/www/sanber-api/
-            git pull origin master
+            sudo git pull origin master
             php artisan l5-swagger:generate
             php artisan key:generate
