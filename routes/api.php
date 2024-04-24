@@ -8,6 +8,7 @@ use App\Http\Controllers\API\LikesController;
 use App\Http\Controllers\API\RepliesController;
 use App\Http\Controllers\API\NotificationsController;
 use App\Http\Controllers\API\NotesController;
+use App\Http\Controllers\API\ScrapperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,8 @@ Route::get('notes/{id}', [NotesController::class, 'showById']);
 Route::post('notes', [NotesController::class, 'create']);
 Route::patch('notes/update/{id}', [NotesController::class, 'updateById']);
 Route::delete('notes/delete/{id}', [NotesController::class, 'deleteById']);
+
+Route::post('cek-pajak', [ScrapperController::class, 'index']);
 
 Route::group(['middleware' => 'auth:api'], function() {
 
