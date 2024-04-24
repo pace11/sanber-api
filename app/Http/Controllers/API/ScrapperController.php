@@ -17,7 +17,7 @@ class ScrapperController extends ResponseController
      */
     public function index(Request $request) {
         $input = $request->all();
-        $client = new Client(HttpClient::create(['timeout' => 5]));
+        $client = new Client(HttpClient::create(['timeout' => 10]));
     
         $website = $client->request('POST', 'http://180.250.219.60:81/cekpajak/', [
             'teks' => $input['nomor_plat'],
